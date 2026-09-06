@@ -1,0 +1,100 @@
+CORRECTED TOKENIZER ANALYSIS
+================================================================================
+Corpus: 500 sentences per language
+Languages: English, Hindi, Tamil, Telugu
+Tokenizers: GPT-2 and XLM-R
+Denominators: whitespace words, Unicode characters, UTF-8 bytes
+================================================================================
+
+
+LANGUAGE: English
+--------------------------------------------------------------------------------
+
+Tokenizer: GPT-2
+  Total tokens:          10,910
+  Total words:            8,382
+  Total characters:      49,832
+  Total UTF-8 bytes:     49,832
+  Tokens / word:           1.3016
+  Tokens / character:     0.2189
+  Tokens / byte:           0.2189
+
+Tokenizer: XLM-R
+  Total tokens:          11,959
+  Total words:            8,382
+  Total characters:      49,832
+  Total UTF-8 bytes:     49,832
+  Tokens / word:           1.4267
+  Tokens / character:     0.2400
+  Tokens / byte:           0.2400
+
+
+LANGUAGE: Hindi
+--------------------------------------------------------------------------------
+
+Tokenizer: GPT-2
+  Total tokens:          72,510
+  Total words:            9,141
+  Total characters:      47,445
+  Total UTF-8 bytes:    121,981
+  Tokens / word:           7.9324
+  Tokens / character:     1.5283
+  Tokens / byte:           0.5944
+
+Tokenizer: XLM-R
+  Total tokens:          13,612
+  Total words:            9,141
+  Total characters:      47,445
+  Total UTF-8 bytes:    121,981
+  Tokens / word:           1.4891
+  Tokens / character:     0.2869
+  Tokens / byte:           0.1116
+
+
+LANGUAGE: Tamil
+--------------------------------------------------------------------------------
+
+Tokenizer: GPT-2
+  Total tokens:         110,019
+  Total words:            4,529
+  Total characters:      40,509
+  Total UTF-8 bytes:    110,658
+  Tokens / word:          24.2921
+  Tokens / character:     2.7159
+  Tokens / byte:           0.9942
+
+Tokenizer: XLM-R
+  Total tokens:          10,993
+  Total words:            4,529
+  Total characters:      40,509
+  Total UTF-8 bytes:    110,658
+  Tokens / word:           2.4272
+  Tokens / character:     0.2714
+  Tokens / byte:           0.0993
+
+
+LANGUAGE: Telugu
+--------------------------------------------------------------------------------
+
+Tokenizer: GPT-2
+  Total tokens:          75,106
+  Total words:            3,607
+  Total characters:      27,927
+  Total UTF-8 bytes:     75,653
+  Tokens / word:          20.8223
+  Tokens / character:     2.6894
+  Tokens / byte:           0.9928
+
+Tokenizer: XLM-R
+  Total tokens:           8,412
+  Total words:            3,607
+  Total characters:      27,927
+  Total UTF-8 bytes:     75,653
+  Tokens / word:           2.3321
+  Tokens / character:     0.3012
+  Tokens / byte:           0.1112
+
+
+   python my_submission\partA\corrected_analysis.py
+
+   Result: GPT-2 shows substantial token inflation for Indic languages, while XLM-R is considerably more token-efficient on Hindi, Tamil, and Telugu. On the 500-sentence-per-language corpus, XLM-R reduces token counts relative to GPT-2 by approximately 81.2% for Hindi, 90.0% for Tamil, and 88.8% for Telugu. Tokens/word, tokens/character, and tokens/byte are useful diagnostic measures, but actual tokenizer tokens per request should drive production routing and cost estimation, because inference cost and context usage depend directly on the tokens processed by the selected model/tokenizer.
